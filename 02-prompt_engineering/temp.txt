@@ -1,0 +1,190 @@
+<task>
+translate english into korean considering the below : 
+
+1. make three different (but same meaning, same tone, same style) setences per a english sentence
+2. translated setence should be accurate, natural,fluent, contextual-consistent, factual-consistent, cutural-appropriate,  
+3. give me your ouput with json scheme 
+4. give me only json 
+</task>
+
+<input example>
+sample given english sentence#1
+sample given english sentence#2
+</input example>
+
+<output example>
+{
+	"input" : ["sample given english setence#1", "sample given english sentence#2"],
+	"ouput":[
+		[sample transted korean setence for #1", "sample translated korean sentence for #1", "sample translated korean setence for #1"],
+		[sample transted korean setenc for #2", "sample translated korean sentence for #2", "sample translated korean setence #2"]
+	]
+
+}
+</output example>
+
+Feeling hungry, we grabbed a pizza from the fridge and microwaved it.
+The video chronologically shows the son's finger stuck in a hole of the dog house, the rescue process by paramedics, and the conclusion of the entire incident.
+
+{"input": [
+
+
+
+<task>
+evaluate the give translated result considering the below:
+
+1. input is composed with json including source sentence and three destination setences 
+2. score from 1 to 5 (1 is poor and 5 is great)
+3. if the score is less than 4, give the reason why you give the score in korean 
+5. if you score less than 4, suggest better translation not in the given inputs
+5. give me json output without additional description 
+</task>
+
+<input example>
+{
+	"input": [
+		"Feeling hungry, we grabbed a pizza from the fridge and microwaved it.",
+		"The video chronologically shows the son's finger stuck in a hole of the dog house, the rescue process by paramedics, and the conclusion of the entire incident."
+	],
+	"translated": [
+		[
+			"배가 고프니까 냉장고에서 피자를 꺼내서 전자레인지에 돌렸어요.",
+			"허기진 마음에 냉장고에서 피자를 하나 빼서 전자레인지로 데웠습니다.",
+			"배가 출출해서 냉장고에서 피자를 꺼내 전자레인지에 데워 먹었어요."
+		],
+		[
+			"해당 비디오에는 아들의 손가락이 개집 구멍에 낀 모습, 구조대의 구조 과정, 그리고 사건의 전말이 시간 순으로 나타나 있습니다.",
+			"그 영상은 시간 순서대로 아들의 손가락이 개집에 끼인 장면, 구급대원들의 구조 활동, 그리고 전체 사건의 결말을 보여줍니다.",
+			"비디오는 아들의 손가락이 개 집의 구멍에 걸린 상황부터 구조대의 구조 작업, 사건의 종결까지를 차례대로 담고 있습니다."
+		]
+	]
+}
+
+</input example>
+
+<output example>
+{
+	"evaluations": [
+		{
+			"score": 4,
+			"source": "Feeling hungry, we grabbed a pizza from the fridge and microwaved it.",
+			"destination": "배가 고프니까 냉장고에서 피자를 꺼내서 전자레인지에 돌렸어요.",
+			"reason": "",
+			"suggestion": ""
+		},
+		{
+			"score": 5,
+			"source": "Feeling hungry, we grabbed a pizza from the fridge and microwaved it.",
+			"destination": "허기진 마음에 냉장고에서 피자를 하나 빼서 전자레인지로 데웠습니다.",
+			"reason": "",
+			"suggestion": ""
+		},
+		{
+			"score": 4,
+			"source": "Feeling hungry, we grabbed a pizza from the fridge and microwaved it.",
+			"destination": "배가 출출해서 냉장고에서 피자를 꺼내 전자레인지에 데워 먹었어요.",
+			"reason": "",
+			"suggestion": ""
+		},
+		{
+			"score": 4,
+			"source": "The video chronologically shows the son's finger stuck in a hole of the dog house, the rescue process by paramedics, and the conclusion of the entire incident.",
+			"destination": "해당 비디오에는 아들의 손가락이 개집 구멍에 낀 모습, 구조대의 구조 과정, 그리고 사건의 전말이 시간 순으로 나타나 있습니다.",
+			"reason": "",
+			"suggestion": ""
+		},
+		{
+			"score": 5,
+			"source": "The video chronologically shows the son's finger stuck in a hole of the dog house, the rescue process by paramedics, and the conclusion of the entire incident.",
+			"destination": "그 영상은 시간 순서대로 아들의 손가락이 개집에 끼인 장면, 구급대원들의 구조 활동, 그리고 전체 사건의 결말을 보여줍니다.",
+			"reason": "",
+			"suggestion": ""
+		},
+		{
+			"score": 4,
+			"source": "The video chronologically shows the son's finger stuck in a hole of the dog house, the rescue process by paramedics, and the conclusion of the entire incident.",
+			"destination": "비디오는 아들의 손가락이 개 집의 구멍에 걸린 상황부터 구조대의 구조 작업, 사건의 종결까지를 차례대로 담고 있습니다.",
+			"reason": "",
+			"suggestion": ""
+		}
+	]
+}
+</output example>
+
+{
+	"input": [
+		"Feeling hungry, we grabbed a pizza from the fridge and microwaved it.",
+		"The video chronologically shows the son's finger stuck in a hole of the dog house, the rescue process by paramedics, and the conclusion of the entire incident."
+	],
+	"translated": [
+		[
+			"배가 고프니까 냉장고에서 피자를 꺼내서 전자레인지에 돌렸어요.",
+			"허기진 마음에 냉장고에서 피자를 하나 빼서 전자레인지로 데웠습니다.",
+			"배가 출출해서 냉장고에서 피자를 꺼내 전자레인지에 데워 먹었어요."
+		],
+		[
+			"해당 비디오에는 아들의 손가락이 개집 구멍에 낀 모습, 구조대의 구조 과정, 그리고 사건의 전말이 시간 순으로 나타나 있습니다.",
+			"그 영상은 시간 순서대로 아들의 손가락이 개집에 끼인 장면, 구급대원들의 구조 활동, 그리고 전체 사건의 결말을 보여줍니다.",
+			"비디오는 아들의 손가락이 개 집의 구멍에 걸린 상황부터 구조대의 구조 작업, 사건의 종결까지를 차례대로 담고 있습니다."
+		]
+	]
+}
+
+{
+	[ 
+           {"score":
+
+
+
+1. request to translate 3 sentences
+
+2. request to evaluate the 3 setences and suggest alternatives for the translate whose score less then 4
+
+3. 
+
+  if all are greater than 3 
+    save the result 
+    exit
+  otherwise
+        
+
+4점 이상인것 저장. 3개 모두 4점 이상이면 끝
+
+3. 
+
+
+
+reuqest to translate given setences not in the given set
+
+evaluate translation
+
+
+[task]
+translate "input" ENGLISH sentences to KOREAN setences considering the below :
+
+1. translate ONE KOREAN setence into THREE KOREAN setences 
+2. the THREE setences must be DIFFERENT while meaning, tone, and style are same 
+3. translated KOREAN setences MUST BE accurate, natural, fluent, cultural-appropriate, contextual-consistent, factual-consistence
+4. your "result" MUST BE json object including "input" and "output"
+[end of task]
+
+["input" example]
+sample KOREAN setence #1
+sample KOREAN setence #2 
+[end of "input" example]
+
+["result" example]
+{
+  "input": ["sample ENGLISH setence #1" , "sample ENGLISH setence #2"],
+  "output" : ["KOREAN setence translated from #1" , "KOREAN setence translated from #1", "KOREAN setence translated from #1"],
+             ["KOREAN setence translated from #2" , "KOREAN setence translated from #2", "KOREAN setence translated from #2"],
+}
+[end of "result" example]
+
+
+Feeling hungry, we grabbed a pizza from the fridge and microwaved it.
+The video chronologically shows the son's finger stuck in a hole of the dog house, the rescue process by paramedics, and the conclusion of the entire incident.
+
+{
+  "input": [
+
